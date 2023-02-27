@@ -1,0 +1,54 @@
+Primeiramente criar um repositorio no git hub e clonar para o PC
+
+Utilizamos o Gulp para compilar o Sass e para Minificar as Imagens
+> npm init --yes
+> npm install --save-dev gulp gulp-sass
+> npm install --save-dev sass (lembrar)
+
+Criar arquivo .gitignore pois alguns arquivos não devem ser versionados (como o node_modules)
+
+Criar arquivo gulp.js e fazer teste para saber se está funcionando:
+function testGulp(cb) {
+    console.log("Olá mundo");
+    cb();
+}
+
+exports.default = testGulp;
+> node .\node_modules\gulp\bin\gulp.js
+
+Para resolver este longo caminho para rodar o gulp com o node, configuramos um script no arquivo package.json:
+"build": "gulp",
+> npm run build
+
+Após testarmos a funcionalidade do gulp, iniciamos a configuração do SASS:
+Criar pasta src:
+	Criar pasta styles:
+		Criar arquivo main.scss
+Testar com um $bgcoloro:
+$bgcolor: red;
+
+body {
+    background-color: $bgcolor;
+}
+
+Conferir se já instalou o pacote sass:
+> npm install --save-dev sass (lembrar)
+Configurar SASS no gulp:
+const gulp = require('gulp');
+const sass = require('gulp-sass')(require('sass'));
+function styles() {
+    return gulp.src('./src/styles/*.scss') // recuperando arquivos
+        .pipe(sass({ outputStyle: 'compressed' })) // comprimindo arquivos
+        .pipe(gulp.dest('./dist/css')); // enviando para pasta destino
+}
+
+Para não ter que ficar executando o npm run build, configuramos o watcher no gulp:
+exports.watch = function() {
+    gulp.watch('./src/styles/*.scss', gulp.parallel(styles))
+}
+> npm run build watch
+
+Também podemos ignorar a pasta dist no .gitignore, pois sempre que um outro desenvolvedor executar o gulp, 
+esta pasta será gerada.
+
+
