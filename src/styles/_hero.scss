@@ -1,0 +1,42 @@
+@use 'variaveis';
+
+.hero {
+    padding: 5.6vw;
+    min-height: 80vh;
+    background-image: url(../images/heroPanther.jfif);
+    text-align: center;
+    background-size: cover;
+
+    &__content {
+        max-width: 640px;
+
+        &__combos {
+            display: flex;
+            list-style: none;
+
+            &__combo {
+                margin-left: 790px;
+                margin-top: 400px;
+
+                button {
+                    align-items: center;
+                    padding-left: 50px;
+                    display: flex;
+                    width: 200px;
+                    height: 60px;
+                    margin-bottom: 8px;
+                    color: variaveis.$corTextoPrincipal;
+                    background-color: #6421ff;
+                    text-transform: uppercase;
+                    border-radius: 4px;
+                }
+
+                span {
+                    background-color: black;
+                    border-radius: 4px;
+                    padding: 4px;
+                }
+            }
+        }
+    }
+}

@@ -51,4 +51,21 @@ exports.watch = function() {
 Também podemos ignorar a pasta dist no .gitignore, pois sempre que um outro desenvolvedor executar o gulp, 
 esta pasta será gerada.
 
+Para minificar imagens com o gulp, configuramos um plugin:
+> npm install --save-dev gulp-imagemin@7.1.0
+Configuramos uma função no gulpfile:
+function images() {
+    return gulp.src('./src/images/**/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('./dist/css'));
+}
+Para executar tanto styles, quanto images da pasta src:
+exports.default = gulp.parallel(styles, images);
+
+Iniciamos as configurações gerais de CSS no arquivo main.scss.
+
+Configurar o gulpWatch no package.json
+
+
+
 
