@@ -1,5 +1,10 @@
 @use 'variaveis';
 @use 'hero';
+@use 'shows';
+@use 'plans';
+@use 'available-devices';
+@use 'faq';
+@use 'footer';
 
 * {
     margin: 0;
@@ -35,7 +40,7 @@ body {
     @include text(12px);
 }
 
-.text--big {
+.title--big {
     @include title(44px);
 }
 
@@ -51,4 +56,32 @@ body {
     @include text(18px);
     color: variaveis.$corTextoSecundario;
     text-decoration: underline;
+}
+
+.button {
+    border: none;
+    align-items: center;
+    padding-left: 50px;
+    display: flex;
+    width: 200px;
+    height: 60px;
+    margin-bottom: 8px;
+    color: variaveis.$corTextoPrincipal;
+    background-color: #6421ff;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.buttonDois {
+    border: none;
+    align-items: center;
+    width: 200px;
+    height: 60px;
+    margin-bottom: 8px;
+    color: variaveis.$corTextoPrincipal;
+    background-color: #6421ff;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
 }

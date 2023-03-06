@@ -66,6 +66,35 @@ Iniciamos as configurações gerais de CSS no arquivo main.scss.
 
 Configurar o gulpWatch no package.json
 
+Organizamos o SCSS em arquivos diferentes:
+main
+_variaveis
+_hero
+_shows
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
