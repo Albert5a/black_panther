@@ -71,7 +71,17 @@ main
 _variaveis
 _hero
 _shows
+_plans
+_available-devices
+_faq
+_footer
 
+Instalamos glupuglify para minificar o arquivo JS
+> npm install --save-dev gulp-uglify
+
+Ao publicar na vercel, configurar Build and Output Sttings: 
+Build command: npm run build
+Output Directory: .
 
 
 
