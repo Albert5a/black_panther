@@ -7,6 +7,13 @@
     text-align: center;
     background-size: cover;
 
+    @media (max-width: 768px) {
+        min-height: 0;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-top: -45px;
+    }
+
     &__content {
         max-width: 640px;
 
@@ -14,14 +21,27 @@
             display: flex;
             list-style: none;
 
+            @media (max-width: 768px) {
+                display: block;
+            }
+
             &__combo {
                 margin-left: 790px;
                 margin-top: 400px;
+
+                @media (max-width: 768px) {
+                    margin-left: 22%;
+                    margin-top: 70%;
+                }
 
                 span {
                     background-color: black;
                     border-radius: 4px;
                     padding: 4px;
+
+                    @media (max-width: 768px) {
+                        margin-right: 30%;
+                    }
                 }
             }
         }

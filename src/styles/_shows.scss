@@ -3,11 +3,18 @@
 .shows {
     padding: 2vw 10vw;
 
+    @media (max-width: 768px) {
+    }
+
     &__list {
         margin-top: 44px;
         display: none;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 24px;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr 1fr;
+        }
 
         &--is-active {
             display: grid;
@@ -18,7 +25,7 @@
             img {
                 max-width: 100%;
                 border-radius: 4px;
-                height: 180px;
+                height: 90px;
             }
         }
     }
@@ -41,6 +48,10 @@
             &--is-active {
                 border-bottom: 5px solid variaveis.$corTextoSecundario;
                 border-color: variaveis.$corTextoSecundario;
+            }
+
+            @media (max-width: 768px) {
+                font-size: 16px;
             }
         }
     }
